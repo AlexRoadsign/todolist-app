@@ -1,0 +1,26 @@
+<div class="container justify-content-center">
+  <div class="row text-center">
+    <div class="col-lg-6">
+      <h1 class="text-center">Voici la liste des emails</h1> 
+    </div> 
+    <div class="col-lg-6">
+      <h1 class="text-center">Email sélectionné</h1>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-lg-6">
+      <button type="button" class="btn btn-light"><%= link_to("Recevoir un email", email_index_path, method: :post, remote: true) %></button>
+        <% Email.all.each do |email| %>
+          <div class="card" id="email-card">
+            <div class="card-body">
+              <h3 class="card-title" id="email-id"><%=link_to email.object, email_path(email.id), remote: true %></h3>
+              <p class="card-text"><%= email.body %></p>
+            </div>    
+          </div>
+        <% end %>
+    </div>
+    <div class="col-lg-6" id="body">
+      <%= render 'show_email' %>
+    </div>
+  </div>
+</div>

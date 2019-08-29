@@ -67,3 +67,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+  # Replace the standard Rails error page with a much better and more useful error page
+  gem "better_errors"
+  gem "binding_of_caller"
+
+  #Faker gem to fake data
+  gem 'faker'

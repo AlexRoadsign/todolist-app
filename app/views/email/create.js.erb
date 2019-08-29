@@ -1,0 +1,3 @@
+alert("Vous avez reçu un nouvel email !!");
+emailElt = document.getElementById("email-card");
+emailElt.insertAdjacentHTML("beforeend", "<%= j render 'email', email: @email %>");
